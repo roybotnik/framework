@@ -1,0 +1,4 @@
+{
+	"name" : "thinger",
+	"main" : "./core/boot.js"
+}
