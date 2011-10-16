@@ -1,5 +1,5 @@
 {
 	"name" : "thinger",
-	"main" : "./thinger.js",
+	"main" : "./framework.js",
 	"version" : "0.0.1"
 }

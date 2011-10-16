@@ -1,3 +1,3 @@
 // Include all base libraries here.
-exports.Routing = require('./router.js');
+exports.routing = require('./router.js');
 
