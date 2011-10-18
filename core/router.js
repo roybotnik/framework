@@ -22,24 +22,35 @@ router.prototype = {
 	 */
 	dispatch : function (req, res) {
 		console.log('=== Begin ===');
-		console.log('Finding route for: ' + req.url);
+
+		var route = findRoute(req.url);
+		
+		if (route === null) {
+			console.log('No route found for ' + req.url);
+
+			res.writeHead(404, {
+				'Content-Type': 'text/plain'
+			});
+			res.write('404 not found');
+
+			return;
+		}
 
 		var body = "Hello world";
-		res.writeHead(404, {
+
+		res.writeHead(200, {
 			'Content-Type': 'text/plain',
 			'Content-Length' : body.length
 		});
 
 		res.write(body);
-
-		console.log('=== End ===');
 	},
 
 	/*
 	 * Finds the route for the given url
 	 */
 	findRoute : function (url) {
-		var foundRoute;
+		var foundRoute = null;
 
 		config.routes.forEach(function(route) {
 			var match = route.url.exec(url);
