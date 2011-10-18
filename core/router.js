@@ -8,7 +8,7 @@ var router = function (config) {
 	this.config = config;
 
 	// Pre-regex-ify every route
-	config.routes.forEach(function (route) {
+	this.config.routes.forEach(function (route) {
 		var regex = new RegExp(route.url, "i");
 		route.url = regex;
 	}, this);
@@ -52,7 +52,7 @@ router.prototype = {
 	findRoute : function (url) {
 		var foundRoute = null;
 
-		config.routes.forEach(function(route) {
+		this.config.routes.forEach(function(route) {
 			var match = route.url.exec(url);
 
 			if (match !== null) {
