@@ -1,5 +1,19 @@
 {
+	"author" : "Roy Quader <roybotnik@gmail.com> (https://github.com/roybotnik)",
 	"name" : "framework",
-	"main" : "./framework.js",
-	"version" : "0.0.1"
+	"description" : "A rich-client oriented web framework",
+	"version" : "0.0.1",
+	"homepage" : "https://github.com/roybotnik/framework",
+	"repository" : {
+		"type" : "git",
+		"url" : "git://github.com/roybotnik/framework.git"
+	},
+	"main" : "framework.js",
+	"scripts" : {
+		"test" : "node test/_runner.js"
+	},
+	"engine" : "node >= v0.4.12",
+	"dependencies" : {
+		"framework-core" : ">= v0.0.1"
+	}
 }
