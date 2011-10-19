@@ -1,6 +1,6 @@
 // Core includes
-exports.core = require('./core/_require.js');
+exports.core = require('./lib/core/_require.js');
 
 // Base classes (used to build an application)
-exports.base = require('./base/_require.js');
+exports.base = require('./lib/base/_require.js');
 
