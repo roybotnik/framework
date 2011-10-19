@@ -9,10 +9,9 @@ var Assert = Core.Testing.Assert;
 var config = require('./config.js');
 
 // Create an instance of the router
-var router = new Framework.Core.Routing.Router(config);
+var router = new Framework.Core.Router(config);
 
 var runner = new Core.Testing.Runner();
-
 var suite = new Core.Testing.Suite({
 	runner : runner,
 
