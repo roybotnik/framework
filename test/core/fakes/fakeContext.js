@@ -23,12 +23,12 @@ fakeContext.prototype = {
 	setUrl : function (url, method) {
 		this.req.url = url;
 		this.req.method = method;
-	}
+	},
 	reset : function() {
 		this.req = {};
 		this.res = new fakeResponse();
 		this.log = "";
-	};
+	}
 };
 
 exports.FakeContext = fakeContext;
