@@ -26,6 +26,30 @@ var suite = new Core.Testing.Suite({
 		}
 	},
 
+	'Should throw an error if routes are not provided' : function () {
+		try {
+			var testRouter = new Framework.Core.Router({
+				controllers : config.controllers
+			});
+		}
+		catch (e)
+		{
+			Assert(e === "Please provide an array of routes", "There was no error or the message didn't match");
+		}
+	},
+
+	'Should throw an error if controllers are not provided' : function () {
+		try {
+			var testRouter = new Framework.Core.Router({
+				routes : config.routes
+			});
+		}
+		catch (e)
+		{
+			Assert(e === "Please provide an array of controllers", "There was no error or the message didn't match");
+		}
+	},
+
 	'Should find route for get: /test' : function () {
 		var route = router.findRoute('/test', 'get');
 
