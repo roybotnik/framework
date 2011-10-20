@@ -1,7 +1,6 @@
 // Get framework & core lib
 var Framework = require('../../../framework.js');
 var Core = require('framework-core');
-var Fake = require('../fakes/fakeContext.js');
 
 // to make it easier
 var Assert = Core.Testing.Assert;

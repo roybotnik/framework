@@ -10,9 +10,11 @@ var testController = function () {
 testController.prototype = {
 	testAction : function (context) {
 		console.log('testAction');
+		return "my body";
 	},
 	otherAction : function (context) {
 		console.log('otherAction');
+		return "other body";
 	}
 };
 var controller = new testController();
