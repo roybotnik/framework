@@ -14,7 +14,7 @@ var suite = new Core.Testing.Suite({
 			var server = new Framework.Core.Http.Server();
 		}
 		catch (e) {
-			Assert(e === "No confg was specified", "There was no error or the message didn't match");
+			Assert(e === "No config was specified", "There was no error or the message didn't match");
 		}
 	},
 

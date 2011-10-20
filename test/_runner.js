@@ -4,7 +4,8 @@
  */
 
 // Core
-require('./core/router/test.js');
+require('./core/router/basic_tests.js');
+require('./core/router/dispatch_tests.js');
 
 // Core.Http
 require('./core/http/server/test.js');

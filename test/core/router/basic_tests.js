@@ -7,11 +7,10 @@ var Fake = require('../fakes/fakeContext.js');
 var Assert = Core.Testing.Assert;
 
 // Get test config
-var config = require('./config.js');
+var config = require('./_config.js');
 
 // Create some test instances
 var router = new Framework.Core.Router(config);
-var context = new Fake.FakeContext();
 
 var runner = new Core.Testing.Runner();
 var suite = new Core.Testing.Suite({
