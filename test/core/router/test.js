@@ -32,10 +32,21 @@ var suite = new Core.Testing.Suite({
 		Assert(route !== null, 'Route was null');
 	},
 
+	'Should find route for post: /skrit' : function () {
+		var route = router.findRoute('/skrit', 'post');
+
+		Assert(route !== null, 'Route was null');
+	},
+
 	'Should not find a route for get: /fasdf' : function () {
 		var route = router.findRoute('/fasdf', 'get');
 
-		console.log(route);
+		Assert(route === null, 'Route was not null');
+	},
+
+	'Should not find route for post: /test' : function () {
+		var route = router.findRoute('/test', 'post');
+
 		Assert(route === null, 'Route was not null');
 	}
 });
