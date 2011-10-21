@@ -9,6 +9,7 @@ exports.Core = {
 		Context : require('./lib/core/http/context.js').Context
 	},
 	Router : require('./lib/core/router.js').Router,
+	Logger : require('./lib/core/logger.js').Logger,
 	Tools : require('./lib/core/tools.js').Tools
 };
 
