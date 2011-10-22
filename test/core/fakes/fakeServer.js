@@ -1,4 +1,4 @@
-var Util = require('util');
+var util = require('util');
 var EventEmitter = require('events').EventEmitter;
 
 fakeServer = function () {
@@ -6,7 +6,7 @@ fakeServer = function () {
 	this.ip = null;
 };
 
-util.inherit(fakeServer, EventEmitter);
+util.inherits(fakeServer, EventEmitter);
 
 fakeServer.prototype.listen = function (port, ip) {
 	this.port = port;

@@ -1,6 +1,6 @@
 var Framework = require('../../../../framework.js');
 var Core = require('framework-core');
-var Fake = require('../fakes/fakeHttp.js');
+var Fake = require('../../fakes/fakeHttp.js');
 
 // to make it easier
 var Assert = Core.Testing.Assert;

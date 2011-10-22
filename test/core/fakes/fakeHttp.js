@@ -13,4 +13,3 @@ fakeHttp.prototype.createServer = function () {
 
 // Export an instance
 exports.Instance = new fakeHttp();
-
