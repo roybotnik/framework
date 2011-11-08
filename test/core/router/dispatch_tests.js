@@ -1,7 +1,7 @@
 // Get framework & core lib
 var Framework = require('../../../framework.js');
 var Core = require('framework-core');
-var Fake = require('../fakes/fakeContext.js');
+var TestingSupport = require('../../support/_support.js');
 
 // to make it easier
 var Assert = Core.Testing.Assert;
@@ -11,13 +11,14 @@ var config = require('./_config.js');
 
 // Create some test instances
 var router = new Framework.Core.Router(config);
-var context = new Fake.FakeContext();
+var context = new TestingSupport.Fakes.Core.Http.Context();
 
 var runner = new Core.Testing.Runner();
 var suite = new Core.Testing.Suite({
 	runner : runner,
 	
 	setUp : function () {
+		console.log(context);
 		context.reset();
 	},
 

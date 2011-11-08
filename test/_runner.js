@@ -3,11 +3,11 @@
  * Hopefully this can get a little more sophisticated as we move on.
  */
 
-// Core
+// Core.Router
 require('./core/router/basic_tests.js');
 require('./core/router/dispatch_tests.js');
 
-// Core.Http
-require('./core/http/server/tests.js');
+// Core.Http.Server
+require('./core/http/server/configuration_tests.js');
+require('./core/http/server/startup_tests.js');
 
-// Base

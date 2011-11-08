@@ -13,4 +13,4 @@ fakeServer.prototype.listen = function (port, ip) {
 	this.ip = ip;
 };
 
-exports.FakeServer = fakeServer;
+exports.Server = fakeServer;

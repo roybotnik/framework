@@ -1,6 +1,5 @@
 var Framework = require('../../../../framework.js');
 var Core = require('framework-core');
-var Fake = require('../../fakes/fakeHttp.js');
 
 // to make it easier
 var Assert = Core.Testing.Assert;
@@ -56,20 +55,7 @@ var suite = new Core.Testing.Suite({
 		catch (e) {
 			Assert(e === "Please provide a logger", "There was no error or the message didn't match");
 		}
-	},
-
-	'Should listen on IP and Port when start() is called' : function () {
-		try
-		{
-			var server = new Framework.Core.Http.Server({
-				router : {},
-				http : Fake.Fake
-			});
-		}
-		catch (e) {
-			Assert(e === "Please provide a logger", "There was no error or the message didn't match");
-		}
-	},
+	}
 });
 
 // run

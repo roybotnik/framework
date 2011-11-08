@@ -3,6 +3,7 @@ var fakeResponse = function () {
 	this.head = {};
 	this.finished = false;
 };
+
 fakeResponse.prototype = {
 	writeHead : function (statusCode, data) {
 		this.head.statusCode = statusCode;
@@ -20,6 +21,7 @@ var fakeContext = function () {
 	this.reset();
 };
 fakeContext.prototype = {
+	constructor : fakeContext,
 	setUrl : function (url, method) {
 		this.req.url = url;
 		this.req.method = method;
@@ -31,4 +33,4 @@ fakeContext.prototype = {
 	}
 };
 
-exports.FakeContext = fakeContext;
+exports.Context = fakeContext;
