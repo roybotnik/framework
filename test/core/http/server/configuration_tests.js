@@ -1,3 +1,5 @@
+console.log('\nCore.Http.Server - Configuration Tests\n');
+
 var Framework = require('../../../../framework.js');
 var Core = require('framework-core');
 

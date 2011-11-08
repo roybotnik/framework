@@ -1,3 +1,5 @@
+console.log('\nCore.Router - Dispatch Tests\n');
+
 // Get framework & core lib
 var Framework = require('../../../framework.js');
 var Core = require('framework-core');
@@ -13,12 +15,8 @@ var config = require('./_config.js');
 var router = new Framework.Core.Router(config);
 var context = new TestingSupport.Fakes.Core.Http.Context();
 
-var runner = new Core.Testing.Runner();
 var suite = new Core.Testing.Suite({
-	runner : runner,
-	
 	setUp : function () {
-		console.log(context);
 		context.reset();
 	},
 
@@ -53,6 +51,8 @@ var suite = new Core.Testing.Suite({
 
 		Assert(context.res.body === "other body\n", "response body did not match");
 	},
+
+	runner : new Core.Testing.Runner()
 });
 
 // run

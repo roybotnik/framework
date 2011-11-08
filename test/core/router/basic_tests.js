@@ -1,4 +1,5 @@
-// Get framework & core lib
+console.log('\nCore.Router - Basic Tests\n');
+
 var Framework = require('../../../framework.js');
 var Core = require('framework-core');
 
@@ -8,12 +9,10 @@ var Assert = Core.Testing.Assert;
 // Get test config
 var config = require('./_config.js');
 
-// Create some test instances
+// Create test router
 var router = new Framework.Core.Router(config);
 
-var runner = new Core.Testing.Runner();
 var suite = new Core.Testing.Suite({
-	runner : runner,
 	'Should throw an error if config is missing' : function () {
 		try {
 			var testRouter = new Framework.Core.Router();
@@ -27,7 +26,8 @@ var suite = new Core.Testing.Suite({
 	'Should throw an error if routes are not provided' : function () {
 		try {
 			var testRouter = new Framework.Core.Router({
-				controllers : config.controllers
+				controllers : config.controllers,
+				logger: config.logger
 			});
 		}
 		catch (e)
@@ -39,12 +39,26 @@ var suite = new Core.Testing.Suite({
 	'Should throw an error if controllers are not provided' : function () {
 		try {
 			var testRouter = new Framework.Core.Router({
-				routes : config.routes
+				routes : config.routes,
+				logger: config.logger
 			});
 		}
 		catch (e)
 		{
 			Assert(e === "Please provide an array of controllers", "There was no error or the message didn't match");
+		}
+	},
+
+	'Should throw an error if logger is not provided' : function () {
+		try {
+			var testRouter = new Framework.Core.Router({
+				routes : config.routes,
+				controllers : config.controllers
+			});
+		}
+		catch (e)
+		{
+			Assert(e === "No logger was provided", "There was no error or the message didn't match");
 		}
 	},
 
@@ -70,7 +84,8 @@ var suite = new Core.Testing.Suite({
 		var route = router.findRoute('/test', 'post');
 
 		Assert(route === null, 'Route was not null');
-	}
+	},
+	runner : new Core.Testing.Runner()
 });
 
 // run
